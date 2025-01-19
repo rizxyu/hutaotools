@@ -19,7 +19,16 @@
       <br>
       <a href="https://github.com/rizxyu">@Rizky</a>
       <br>
-      Base Maker & Owner
+      Owne ( Frontend & Backend )
+    </td>
+    <td width="20%" align="center" rowspan="2" colspan="2">
+      <a href="https://github.com/mininxd">
+      <img src="https://images.weserv.nl/?url=github.com/mininxd.png?v=4&h=100&w=100&fit=cover&mask=circle&maxage=7d" width="128">
+      </a>
+      <br>
+      <a href="https://github.com/mininxd">@Minin</a>
+      <br>
+      Partner Contributor ( Front End)
     </td>
   </tr>
 </table>
