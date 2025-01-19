@@ -1,18 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modeToggleButton = document.getElementById('switch-mode');
-
-  function toggleMode() {
-    document.body.classList.toggle('white-mode');
-    const cardText = modeToggleButton.querySelector('.card-text');
-    
-    if (document.body.classList.contains('white-mode')) {
-      cardText.textContent = 'Mode Gelap'; 
-    } else {
-      cardText.textContent = 'Mode Terang'; //
+  const cardText = modeToggleButton.querySelector('.card-text');
+  
+  if(!localStorage.getItem("mode")) {
+    document.body.classList.add('white-mode');
+  } else if(localStorage.getItem("mode") == "gelap") {
+    document.body.classList.remove('white-mode');
+    cardText.textContent = 'Mode Terang'; 
     }
-  }
-
-  if (modeToggleButton) {
-    modeToggleButton.addEventListener('click', toggleMode);
-  }
-});
+  
+    
+modeToggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('white-mode');
+    cardText.textContent = (cardText.textContent === 'Mode Terang') ? 'Mode Gelap' : 'Mode Terang';
+    
+    if(localStorage.getItem("mode")) {
+      localStorage.removeItem("mode");
+    } else {
+      localStorage.setItem("mode", "gelap");
+    }
+  });
+    
+})
