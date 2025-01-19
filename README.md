@@ -19,7 +19,7 @@
       <br>
       <a href="https://github.com/rizxyu">@Rizky</a>
       <br>
-      Owne ( Frontend & Backend )
+      Kapal Lawud
     </td>
     <td width="20%" align="center" rowspan="2" colspan="2">
       <a href="https://github.com/mininxd">
