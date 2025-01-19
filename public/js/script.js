@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </td>
             <td>Download MP3 (${music.resolusi})</td>
             <td>
-              <button class="downloadBtn bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" data-url="${music.url}">
+              <button class="downloadBtn btn-primary-submit py-2 px-4 rounded data-url="${music.url}">
                 <i class="fas fa-download"></i>
               </button>
             </td>
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </td>
             <td>Download MP4 (${video.resolusi})</td>
             <td>
-              <button class="downloadBtn bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" data-url="${video.url}">
+              <button class="downloadBtn bg-purple-600 py-2 px-4 rounded hover:bg-purple-700" data-url="${video.url}">
                 <i class="fas fa-download"></i>
               </button>
             </td>
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </td>
             <td>Download Gambar</td>
             <td>
-              <button class="downloadBtn bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" data-url="${image}">
+              <button class="downloadBtn bg-purple-600 py-2 px-4 rounded hover:bg-purple-700" data-url="${image}">
                 <i class="fas fa-download"></i>
               </button>
             </td>
@@ -135,8 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       resultCard.innerHTML = `
-        <span class="text-xs font-semibold text-white bg-gray-700 px-2 py-1 rounded">
-          <span class="text-white">Hasil</span> <span class="text-purple-400">Download</span>
+        <span class="text-xs font-semibold  res-text-box px-2 py-1 rounded">
+          <span>Hasil</span> <span class="text-purple-400">Download</span>
         </span>
 
         <div class="flex justify-center mb-4">
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="text-lg font-semibold text-center mb-4">${title}</p>
 
         <!-- Tabel Download -->
-        <table class="table-auto w-full text-left text-gray-200 border-separate border-spacing-2">
+        <table class="table-auto w-full text-left border-separate border-spacing-2">
           <thead>
             <tr>
               <th></th>

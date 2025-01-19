@@ -6,6 +6,7 @@
   --bg-abu-abu: #d2d2d2;
   --bg-main: #0f0f0f;
   --bg-ntah: #c0c0c0;
+  --bg-gray-agakgelap: #8d8d8d;
   --warna-kedua: #212121;
   --text-main: #ffffff;
   --text-gelap: #000;
@@ -13,6 +14,7 @@
   --primary-color: #cd03ff;
   --hover-color: #eec4ff;
   --warna-bg-kartu: #212121;
+  --warna-bg-kartu-gelap: #111111;
   --warna-bg-hover: #343434; 
   --warna-border: #525252;
   --warna-icon-biru: #2563eb; 
@@ -62,6 +64,30 @@ color: var(--text-gelap);
   background-color: var(--bg-ntah);
 }.white-mode .card-text {
   color: var(--text-gelap);
+}.white-mode .donation-card, 
+ .white-mode .donation-card-2 {
+  background: var(--bg-ntah);
+  color: var(--text-gelap);
+}.white-mode .donation-card-1 {
+  background-color: var(--bg-ntah);
+  color: var(--text-gelap);
+}.white-mode .donation-card-1 a,
+.white-mode .donation-card-2 a,
+.white-mode .donation-card a {
+  color: var(--text-gelap);
+  font-weight: bold;
+  transition: color 0.3s;
+}.white-mode .donation-card a:hover,
+.white-mode .donation-card-1 a:hover,
+.white-mode .donation-card-2 a:hover {
+  color: var(--text-cyangl);
+}.white-mode .res-card {
+  background-color: var(--bg-ntah);
+}.white-mode .res-text-box {
+  background-color: var(--bg-gray-agakgelap);
+}.white-mode .form-download {
+  background-color: var(--bg-ntah);
+  color: var(--text-gelap);
 }
 
 .text-text-main {
@@ -108,6 +134,8 @@ nav .nav-btn:hover {
   padding: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+}.res-text-box {
+  background-color: var(--warna-bg-kartu-gelap);
 }
 
 .form-download {
