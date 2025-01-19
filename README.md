@@ -28,7 +28,17 @@
       <br>
       <a href="https://github.com/mininxd">@Minin</a>
       <br>
-      Partner Contributor ( Front End)
+      Partner Contributor ( FrontEnd )
+    </td>
+    </td>
+    <td width="20%" align="center" rowspan="2" colspan="2">
+      <a href="https://github.com/muhammadrestu999">
+      <img src="https://images.weserv.nl/?url=github.com/muhammadrestu999.png?v=4&h=100&w=100&fit=cover&mask=circle&maxage=7d" width="128">
+      </a>
+      <br>
+      <a href="https://github.com/mininxd">@Restu</a>
+      <br>
+      Partner Contributor ( Backend )
     </td>
   </tr>
 </table>
