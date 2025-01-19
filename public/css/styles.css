@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@500&family=Roboto&family=Silkscreen:wght@400;700&display=swap');
+@import url("./tailwind.css");
 
 :root {
   --bg-putih: #ffff;
@@ -74,7 +75,7 @@ color: var(--text-gelap);
   background-color: var(--warna-btn-primary-bg);
   color: var(--text-main);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
@@ -106,7 +107,7 @@ nav .nav-btn:hover {
   background-color: var(--warna-bg-kartu);
   padding: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .form-download {
@@ -117,7 +118,7 @@ nav .nav-btn:hover {
   background-color: var(--warna-btn-primary-bg);
   color: var(--text-main);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
@@ -132,7 +133,7 @@ nav .nav-btn:hover {
   background-color: var(--warna-btn-primary-bg);
   color: var(--text-main);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
@@ -146,20 +147,20 @@ nav .nav-btn:hover {
 /* Card Donasi */
 .donation-card {
   background: linear-gradient(var(--warna-donation-card-bg-start), var(--warna-donation-card-bg-end));
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .donation-card-1 {
   background-color: var(--warna-bg-kartu);
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 16px;
 }
 
 .donation-card-2 {
   background: linear-gradient(var(--warna-bg-kartu), var(--warna-donation-card-bg-start));
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -179,7 +180,7 @@ nav .nav-btn:hover {
 .lainnya-card {
   background-color: var(--warna-card-bg);
   border: 1px solid var(--warna-card-border);
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .lainnya-card:hover {

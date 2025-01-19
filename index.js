@@ -97,6 +97,14 @@ let server
 
 app.post("/api/execute", apis);
 
+
+// For development without httpServer
+/*
+app.listen(3000, () => {
+  console.log("listening on localhost:3000");
+})
+*/
+
 server = (
   port == 443 ?
   httpsServer :
@@ -110,8 +118,7 @@ server = (
       `http://localhost${port == 80 ? "" : ":" + port}`
     )
   );
-});
-
+})
 
 function formatDate(date) {
   const YYYY = String(date.getFullYear());
