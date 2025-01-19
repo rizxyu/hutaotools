@@ -1,0 +1,6 @@
+User-agent: HelloWorld
+Disallow: /
+
+User-agent: *
+Disallow: /admin
+Allow: /

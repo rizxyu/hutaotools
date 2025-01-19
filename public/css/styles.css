@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@500&family=Roboto&family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+  --bg-putih: #ffff;
+  --bg-abu-abu: #d2d2d2;
+  --bg-main: #0f0f0f;
+  --bg-ntah: #c0c0c0;
+  --warna-kedua: #212121;
+  --text-main: #ffffff;
+  --text-gelap: #000;
+  --text-cyangl: #56006b;
+  --primary-color: #cd03ff;
+  --hover-color: #eec4ff;
+  --warna-bg-kartu: #212121;
+  --warna-bg-hover: #343434; 
+  --warna-border: #525252;
+  --warna-icon-biru: #2563eb; 
+  --warna-icon-hijau: #16a34a; 
+  --warna-icon-kuning: #ca8a04; 
+  --warna-icon-abu: #4b5563;
+  --warna-icon-merah: #dc2626;  
+  --warna-teks-putih: #ffffff;
+  --warna-teks-ikon: #9ca3af;
+  --warna-nav-bg: #1e1e1e; /* Warna background navigation */
+  --warna-btn-primary-bg: #cd03ff; /* Warna background button primary */
+  --warna-btn-primary-hover-bg: #9700bc;
+  --warna-donation-card-bg-start: #0f0f0f;
+  --warna-donation-card-bg-end: #212121;
+  --warna-donation-card-link: #e4a6fc;
+  --warna-donation-card-hover-link: #eec4ff;
+  --warna-card-bg: #212121;
+  --warna-card-hover-bg: #59535b;
+  --warna-card-border: #535353;
+  --warna-progress-bg: currentColor;
+  --warna-modal-overlay-bg: #0f0f0f;
+  --warna-modal-content-bg: #212121;
+  --warna-modal-close-hover: #f87171;
+  --warna-modal-title-color: #facc15;
+  --warna-modal-text-color: #e2e8f0;
+  --warna-modal-button-bg: #2563eb;
+  --warna-modal-button-hover-bg: #1d4ed8;
+}
+
+.bg-main {
+  background-color: var(--bg-main);
+}
+.bg-main.white-mode {
+  background-color: var(--bg-putih);
+  color: var(--text-gelap);
+}
+.white-mode .nav-bg {
+  background-color: var(--bg-abu-abu);
+}.white-mode .nav-btn {
+color: var(--text-gelap);
+}.white-mode .nav-btn.active,.nav-btn:hover {
+  color: var(--text-cyangl);
+}.white-mode .card {
+  background-color: var(--bg-abu-abu);
+  border: 1px solid var(--text-gelap);
+}.white-mode .card:hover {
+  background-color: var(--bg-ntah);
+}.white-mode .card-text {
+  color: var(--text-gelap);
+}
+
+.text-text-main {
+  color: var(--text-main); /* Warna teks utama */
+}.nav-bg {
+  background-color: var(--warna-nav-bg); /* Warna background navigation */
+}
+
+/* Warna button */
+.btn-primary {
+  background-color: var(--warna-btn-primary-bg);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+/* Bottom navigation button */
+nav .nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-main); /* Warna teks tombol */
+  transition: color 0.3s ease, transform 0.2s ease; /* Transisi untuk warna dan transformasi */
+}
+
+nav .nav-btn span {
+  font-size: 10px; /* Ukuran font lebih kecil */
+}
+
+nav .nav-btn.active,
+nav .nav-btn:hover {
+  color: rgb(247,226,255); /* Warna saat hover atau aktif */
+  text-shadow: 0 0 15px rgba(208,88,254,0.8);
+  transform: scale(1.1); /* Efek zoom saat aktif */
+}
+
+.res-card {
+  background-color: var(--warna-bg-kartu);
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.form-download {
+  background-color: var(--warna-bg-kartu);
+}
+
+.btn-primary-submit {
+  background-color: var(--warna-btn-primary-bg);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-primary-submit:hover {
+  background-color: var(--warna-btn-primary-hover-bg);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary-download {
+  background-color: var(--warna-btn-primary-bg);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-primary-download:hover {
+  background-color: var(--warna-btn-primary-hover-bg);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Donasi */
+.donation-card {
+  background: linear-gradient(var(--warna-donation-card-bg-start), var(--warna-donation-card-bg-end));
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.donation-card-1 {
+  background-color: var(--warna-bg-kartu);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.donation-card-2 {
+  background: linear-gradient(var(--warna-bg-kartu), var(--warna-donation-card-bg-start));
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.donation-card-1 a,
+.donation-card-2 a,
+.donation-card a {
+  color: var(--warna-donation-card-link);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.donation-card a:hover {
+  color: var(--warna-donation-card-hover-link);
+}
+
+.lainnya-card {
+  background-color: var(--warna-card-bg);
+  border: 1px solid var(--warna-card-border);
+  border-radius: 8px;
+}
+
+.lainnya-card:hover {
+  background-color: var(--warna-card-hover-bg);
+}
+
+.progress {
+   width: 134.4px;
+   height: 24.6px;
+   border-radius: 22.4px;
+   color: var(--primary-color);
+   border: 2.2px solid;
+   position: relative;
+}
+
+.progress::before {
+   content: "";
+   position: absolute;
+   margin: 2.2px;
+   inset: 0 100% 0 0;
+   border-radius: inherit;
+   background: var(--warna-progress-bg);
+   animation: progress-pf82op 2s infinite;
+}
+
+@keyframes progress-pf82op {
+   100% {
+      inset: 0;
+   }
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  background-color: var(--warna-bg-kartu);
+  border: 1px solid var(--warna-card-border);
+  padding: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.card:hover {
+  background-color: var(--warna-card-hover-bg);
+}
+
+.card-icon {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+}
+
+.card-text {
+  color: var(--warna-teks-putih);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.card-chevron {
+  color: var(--warna-teks-ikon);
+}
+
+/* Overlay Modal Fullscreen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Lebar penuh */
+  height: 100vh; /* Tinggi penuh */
+  background-color: var(--warna-modal-overlay-bg); /* Warna gelap transparan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Di atas semua elemen */
+  overflow: hidden; /* Hindari scroll */
+}
+
+/* Konten Modal */
+.modal-content {
+  background-color: var(--warna-modal-content-bg); /* Warna abu gelap */
+  color: var(--text-main); /* Teks putih */
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Tombol Close (X) */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #94a3b8; /* Abu-abu terang */
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--warna-modal-close-hover); /* Merah saat hover */
+}
+
+/* Judul Modal */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--warna-modal-title-color); /* Kuning emas */
+}
+
+/* Isi Konten */
+.modal-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--warna-modal-text-color); /* Abu terang */
+}
+
+/* Tombol Tutup */
+.modal-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--warna-modal-button-bg); /* Biru */
+  color: var(--text-main);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-button:hover {
+  background-color: var(--warna-modal-button-hover-bg); /* Biru lebih gelap saat hover */
+}
+
+/* Animasi Muncul */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

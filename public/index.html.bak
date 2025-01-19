@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Modern Downloader</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Modern downloader">
+    <meta name="description" content="Mengunduh berbagai file dari tautan apapun dalam satu situs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beta.wzblueline.xyz">
+    <meta property="og:title" content="Modern downloader">
+    <meta property="og:description" content="Mengunduh berbagai file dari tautan apapun dalam satu situs">
+    <meta property="og:image" content="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://beta.wzblueline.xyz">
+    <meta property="twitter:title" content="Modern downloader">
+    <meta property="twitter:description" content="Mengunduh berbagai file dari tautan apapun dalam satu situs">
+    <meta property="twitter:image" content="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="/js/script.js"></script>
+  </head>
+  <body class="bg-main text-text-main">
+    <div id="content" class="p-4">
+      <!-- Home section -->
+      <div id="home">
+        <form id="downloadForm" class="flex items-center gap-2 mb-6">
+          <input type="url" id="urlInput" placeholder="Masukkan URL Disini.." required class="flex-1 p-2 form-download text-white rounded outline-none focus:ring-2 focus:ring-purple-500">
+          <button type="submit" class="btn-primary-submit flex items-center gap-2">
+            <i class="fas fa-download"></i>
+          </button>
+        </form>
+
+        <!-- Gambar Header yang Tengah -->
+        <div id="startImage" class="flex justify-center mb-4">
+          <img src="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png" alt="chibi Image" class="w-32 h-auto rounded">
+        </div>
+        <p id="startText" class="text-center text-lg font-semibold mb-6">
+          Ayo mulai mengunduh sesuatu! ✨
+        </p>
+
+        <!-- Error element -->
+        <div id="errorElement" class="hidden">
+          <div class="flex justify-center mb-4">
+            <img src="https://i.ibb.co.com/3WWy0xf/45f77b907825e795c0346f2841598000.png" alt="chibi Image" class="w-32 h-auto rounded">
+          </div>
+          <p class="text-center text-lg font-semibold mb-6">
+            Terjadi kesalahan dalam memproses tautan!
+          </p>
+        </div>
+        <!-- Card Hasil Download -->
+        <div id="resultCard" class="res-card rounded p-4 hidden">
+          <!-- Label -->
+        </div>
+      </div>
+
+      <!-- Changelog section -->
+      <div id="changelog" class="hidden">
+        <div id="changelogContent"></div>
+      </div>
+
+      <!-- Donasi section -->
+      <div id="donasi" class="hidden">
+        <p>Jika Anda suka dengan proyek ini, pertimbangkan untuk berdonasi:</p>
+
+        <!-- Card untuk PayPal -->
+        <div class="donation-card flex items-center justify-between p-4 rounded-lg my-4">
+          <div class="flex items-center gap-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/PayPal_Logo_Icon_2014.svg" alt="PayPal" class="w-10 h-10">
+            <span class="text-white text-lg font-semibold">PayPal</span>
+          </div>
+          <a href="https://paypal.me/yourusername" target="_blank" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card untuk Trakteer -->
+        <div class="donation-card-1 flex items-center justify-between p-4 rounded-lg my-4">
+          <div class="flex items-center gap-3">
+            <img src="https://edge-cdn.trakteer.id/images/mix/trakteer-icon-thumbnail.png?date=18-11-2023" alt="Trakteer" class="w-10 h-10">
+            <span class="text-white text-lg font-semibold">Trakteer</span>
+          </div>
+          <a href="https://trakteer.id/yourusername" target="_blank" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card untuk Saweria -->
+        <div class="donation-card-2 flex items-center justify-between p-4 rounded-lg my-4">
+          <div class="flex items-center gap-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQydAm9ZscT-7mX_jc12aRfhtjf3WtZXN40cg&s" alt="Saweria" class="w-10 h-10">
+            <span class="text-white text-lg font-semibold">Saweria</span>
+          </div>
+          <a href="https://saweria.co/yourusername" target="_blank" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Section lainnya -->
+      <div id="lainnya" class="hidden">
+        <!-- Kartu: Apa itu Norami Tools -->
+        <div class="lainnya-card flex items-center justify-between p-4 rounded-lg my-4">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-cogs text-white text-xl"></i> <!-- Icon yang lebih kecil -->
+            <span class="text-white text-sm font-semibold">Apa itu Hutao DL</span> <!-- Teks lebih kecil -->
+          </div>
+          <a href="#" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Kartu: Contributors -->
+        <div class="lainnya-card flex items-center justify-between p-4 rounded-lg my-1">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-users text-white text-xl"></i> <!-- Icon yang lebih kecil -->
+            <span class="text-white text-sm font-semibold">Contributors</span> <!-- Teks lebih kecil -->
+          </div>
+          <a href="#" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Kartu: Contact Us -->
+        <div class="lainnya-card flex items-center justify-between p-4 rounded-lg my-1">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-phone-alt text-white text-xl"></i> <!-- Icon yang lebih kecil -->
+            <span class="text-white text-sm font-semibold">Contact Us</span> <!-- Teks lebih kecil -->
+          </div>
+          <a href="#" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Kartu: Kebijakan dan Ketentuan -->
+        <div class="lainnya-card flex items-center justify-between p-4 rounded-lg my-1">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-gavel text-white text-xl"></i> <!-- Icon yang lebih kecil -->
+            <span class="text-white text-sm font-semibold">Kebijakan dan Ketentuan</span> <!-- Teks lebih kecil -->
+          </div>
+          <a href="#" class="text-white text-lg">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Kartu: Non-profit Organization -->
+        <div class="lainnya-card flex items-center justify-between p-4 rounded-lg my-1">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-heart text-white text-xl"></i> <!-- Icon yang lebih kecil -->
+            <span class="text-white text-sm font-semibold">Tidak Berafiliasi / Non-profit Organization</span> <!-- Teks lebih kecil -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <nav class="fixed bottom-0 left-0 right-0 nav-bg shadow-md">
+        <div class="flex justify-around py-4">
+          <button class="nav-btn" data-target="home">
+            <i class="fas fa-home text-lg"></i>
+            <span class="text-xs">Beranda</span>
+          </button>
+          <button class="nav-btn" data-target="changelog">
+            <i class="fas fa-history text-lg"></i>
+            <span class="text-xs">Changelog</span>
+          </button>
+          <button class="nav-btn" data-target="donasi">
+            <i class="fas fa-heart text-lg"></i>
+            <span class="text-xs">Donasi</span>
+          </button>
+          <button class="nav-btn" data-target="lainnya">
+            <i class="fas fa-ellipsis-h text-lg"></i>
+            <span class="text-xs">Lainnya</span>
+          </button>
+        </div>
+      </nav>
+  </body>
+</html>
