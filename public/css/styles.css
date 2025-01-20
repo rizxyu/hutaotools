@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@500&family=Roboto&family=Silkscreen:wght@400;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css");
 @import url("./tailwind.css");
+@import url("./component.css");
+@import url("./theme.css");
 
 :root {
   --bg-putih: #ffff;

@@ -1,0 +1,8 @@
+* {
+  transition: all 0.05s ease;
+}
+div#lainnya > hr {
+  height: 6px;
+  border: none;
+  background: transparent;
+}

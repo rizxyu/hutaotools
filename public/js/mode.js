@@ -1,24 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const modeToggleButton = document.getElementById('switch-mode');
-  const cardText = modeToggleButton.querySelector('.card-text');
-  
-  if(!localStorage.getItem("mode")) {
-    document.body.classList.add('white-mode');
-  } else if(localStorage.getItem("mode") == "gelap") {
-    document.body.classList.remove('white-mode');
-    cardText.textContent = 'Mode Terang'; 
-    }
-  
-    
-modeToggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('white-mode');
-    cardText.textContent = (cardText.textContent === 'Mode Terang') ? 'Mode Gelap' : 'Mode Terang';
-    
-    if(localStorage.getItem("mode")) {
-      localStorage.removeItem("mode");
-    } else {
-      localStorage.setItem("mode", "gelap");
-    }
-  });
-    
-})
+window.addEventListener('DOMContentLoaded', () => {
+// Save & load theme
+const toggle = document.querySelector('.theme-controller');
+
+toggle.addEventListener('change', () => {
+    localStorage.setItem('theme', toggle.checked ? toggle.value : '');
+    const modeText = document.getElementById("switch-mode-text");
+    modeText.textContent = (modeText.textContent === 'Mode Terang') ? 'Mode Gelap' : 'Mode Terang';
+});
+
+// Load themes
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    toggle.checked = true;
+    document.getElementById("switch-mode-text").textContent = "Mode Terang";
+    };
+});
