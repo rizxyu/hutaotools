@@ -28,16 +28,17 @@
     <script src="/js/modal.js"></script>
    <script src="/js/mode.js"></script>
   </head>
-  <body class="bg-main text-text-main">
-    <div id="content" class="p-4">
+  <body class="p-4">
+    <div id="content" class="p-2">
       <!-- Home section -->
       <div id="home">
         <form id="downloadForm" class="flex items-center gap-2 mb-6">
-          <input type="url" id="urlInput" placeholder="Masukkan URL Disini.." required class="input input-bordered w-full max-w-xs flex-1 p-2 form-download rounded outline-none focus:ring-2 focus:ring-purple-500">
-          <button type="submit" class="btn-primary-submit flex items-center gap-2 py-3 px-5">
+          <input type="url" id="urlInput" placeholder="Masukkan URL Disini.." required class="input input-bordered w-full max-w-xs flex-1 p-2 rounded outline-none focus:ring-2 focus:ring-purple-500">
+          <button type="submit" class="btn-primary-submit h-12 w-16 flex justify-center items-center">
             <i class="fas fa-download"></i>
           </button>
         </form>
+        
         <!-- Gambar Header yang Tengah -->
         <div id="startImage" class="flex justify-center mb-4">
           <img src="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png" alt="chibi Image" class="w-32 h-auto rounded">
@@ -104,73 +105,58 @@
       </div>
 
 <div id="lainnya" class="hidden space-y-0">
-  <!-- Kartu: Apa itu Hutao DL -->
-  <div id="open-modal-hutao" class="card flex items-center justify-between first:rounded-t-xl last:rounded-b-xl">
-    <div class="flex items-center gap-3">
-      <div class="card-icon flex justify-center w-8 h-8" style="background-color: var(--warna-icon-biru);">
-        <i class="fas fa-cogs text-white text-xs"></i>
-      </div>
-      <span class="card-text">Apa itu Hutao DL</span>
-    </div>
-    <i class="fas fa-chevron-right card-chevron"></i>
-  </div>
-
+  <!-- Kartu: Apa itu Hutao Tools -->
+<div onclick="apaItuHutaoTools.showModal();" class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
+  <i style="background-color: var(--warna-icon-biru);" class="fas fa-cogs rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
+  <span class="justify-center items-center w-full p-1 mx-1">Apa Itu Hutao Tools</span>
+  <i class="fas fa-chevron-right flex justify-center items-center"></i>
+</div>
+ <hr>
+ 
   <!-- Kartu: Contributors -->
-  <div class="card flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="card-icon flex justify-center w-8 h-8" style="background-color: var(--warna-icon-hijau);">
-        <i class="fas fa-users text-white text-xs"></i>
-      </div>
-      <span class="card-text">Contributors</span>
-    </div>
-    <i class="fas fa-chevron-right card-chevron"></i>
-  </div>
-
+<div class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
+  <i style="background-color: var(--warna-icon-hijau);" class="fas fa-users rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
+  <span class="justify-center items-center w-full p-1 mx-1">Contributors</span>
+  <i class="fas fa-chevron-right flex justify-center items-center"></i>
+</div>
+ <hr>
+ 
   <!-- Kartu: Contact Us -->
-  <div class="card flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="card-icon flex justify-center w-8 h-8" style="background-color: var(--warna-icon-kuning);">
-        <i class="fas fa-phone-alt text-white text-xs"></i>
-      </div>
-      <span class="card-text">Contact Us</span>
-    </div>
-    <i class="fas fa-chevron-right card-chevron"></i>
-  </div>
+<div class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
+  <i style="background-color: var(--warna-icon-kuning);" class="fas fa-phone-alt rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
+  <span class="justify-center items-center w-full p-1 mx-1">Contact Us</span>
+  <i class="fas fa-chevron-right flex justify-center items-center"></i>
+</div>
+<hr>
 
   <!-- Kartu: Kebijakan dan Ketentuan -->
-  <div class="card flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="card-icon flex justify-center w-8 h-8" style="background-color: var(--warna-icon-abu);">
-        <i class="fas fa-gavel text-white text-xs"></i>
-      </div>
-      <span class="card-text">Kebijakan dan Ketentuan</span>
-    </div>
-    <i class="fas fa-chevron-right card-chevron"></i>
-  </div>
+<div class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
+  <i style="background-color: var(--warna-icon-abu);" class="fas fa-gavel rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
+  <span class="justify-center items-center w-full p-1 mx-1">Kebijakan dan Ketentuan</span>
+  <i class="fas fa-chevron-right flex justify-center items-center"></i>
+</div>
+<hr>
 
   <!-- Kartu: Non-profit Organization -->
-  <div class="card flex items-center justify-between last:rounded-b-xl">
-    <div class="flex items-center gap-3">
-      <div class="card-icon flex justify-center w-8 h-8" style="background-color: var(--warna-icon-merah);">
-        <i class="fas fa-heart text-white text-xs"></i>
-      </div>
-      <span class="card-text">Tidak Berafiliasi / Non-profit Organization</span>
-    </div>
-  </div>
-  
+<div class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
+    <i style="background-color: var(--warna-icon-merah);" class="fas fa-heart rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
+    <span class="justify-center items-center w-full p-1 mx-1">Tidak Berafiliasi / Non-profit Organization</span>
+  <i class="fas fa-chevron-right flex justify-center items-center"></i>
+</div>
+<hr>
+
   <!----mode gelap--->
-<div class="card flex items-center justify-between last:rounded-b-xl" id="switch-mode">
-  <div class="flex items-center gap-3">
-    <div class="card-icon flex justify-center w-8 h-8" style="background-color: var(--warna-icon-abu);">
-      <i class="fas fa-moon text-white text-xs"></i>
-    </div>
-    <span class="card-text" id="switch-mode-text">Mode Gelap</span>
-  </div>
+<div class="flex rounded-2xl bg-base-300 p-3 w-full font-bold" id="switch-mode">
+  <i style="background-color: var(--warna-icon-hijau);" class="fas fa-users rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
+  <span id="switch-mode-text" class="justify-center items-center w-full p-1 mx-1">Mode Gelap</span>
+  <span class="flex justify-center items-center">
+  <input type="checkbox" value="light" class="toggle theme-controller" />
+  </span>
 </div>
 </div>
       
       <!-- Bottom Navigation -->
-      <nav class="fixed bottom-0 left-0 right-0 nav-bg shadow-md">
+      <nav class="fixed bottom-0 left-0 right-0 dark-theme shadow-md">
         <div class="flex justify-around py-4 px-6">
           <button class="nav-btn" data-target="home">
             <i class="fas fa-home text-lg"></i>
@@ -191,5 +177,22 @@
         </div>
       </nav>
     </div>
+    
+    
+    
+    <!---Modal----->
+  <!---Apa itu hutao tools-->
+    <dialog id="apaItuHutaoTools" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Apa Itu Hutao Tools!</h3>
+    <p class="py-4">Hutao Tools Adalah....</p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+
+
   </body>
 </html>
