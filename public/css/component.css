@@ -1,5 +1,5 @@
 * {
-  transition: all 0.05s ease;
+  transition: all 10ms ease-in;
 }
 div#lainnya > hr {
   height: 6px;
