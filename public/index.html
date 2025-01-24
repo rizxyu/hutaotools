@@ -28,12 +28,13 @@
     <script src="/js/script.js"></script>
     <script src="/js/modal.js"></script>
    <script src="/js/mode.js"></script>
+   <script src="/js/dekstop.js"></script>
   </head>
-  <body class="p-4">
+  <body class="p-4 md:px-24 lg:px-32">
     <div id="content" class="p-2">
       <!-- Home section -->
       <div id="home">
-        <form id="downloadForm" class="flex items-center gap-2 mb-6">
+        <form id="downloadForm" class="flex items-center justify-center gap-2 mb-6">
           <input type="url" id="urlInput" placeholder="Masukkan URL Disini.." required class="input input-bordered w-full max-w-xs flex-1 p-2 rounded outline-none focus:ring-2 focus:ring-purple-500">
           <button type="submit" class="btn-primary-submit h-12 w-16 flex justify-center items-center">
             <i class="fas fa-download"></i>
@@ -154,10 +155,11 @@
   <input type="checkbox" value="light" class="toggle theme-controller" />
   </span>
 </div>
+  <div id="spacing" class="h-44 w-2"></div>
 </div>
       
       <!-- Bottom Navigation -->
-      <nav id="navbar" class="fixed bottom-0 left-0 dark-theme rounded w-full shadow-2xl">
+      <nav id="navbar" class="fixed bottom-4 z-10 dark-theme left-0 align-middle rounded-2xl shadow-2xl w-full">
         <div class="flex justify-around py-4 px-6">
           <button class="nav-btn" data-target="home">
             <i class="fas fa-home text-lg"></i>
