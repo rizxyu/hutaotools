@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       resultCard.innerHTML = `
-        <span class="text-xs font-semibold  res-text-box px-2 py-1 rounded">
+        <span class="text-xs font-semibold px-2 py-1 shadow rounded">
           <span>Hasil</span> <span class="text-purple-400">Download</span>
         </span>
 
