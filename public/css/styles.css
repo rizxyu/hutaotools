@@ -68,10 +68,8 @@ color: var(--text-gelap);
 }.white-mode .card-text {
   color: var(--text-gelap);
 }.white-mode .donation-card, 
- .white-mode .donation-card-2 {
-  background: var(--bg-ntah);
-  color: var(--text-gelap);
-}.white-mode .donation-card-1 {
+ .white-mode .donation-card-2,
+ .white-mode .donation-card-1 {
   background-color: var(--bg-ntah);
   color: var(--text-gelap);
 }.white-mode .donation-card-1 a,
@@ -177,20 +175,17 @@ nav .nav-btn:hover {
 
 /* Card Donasi */
 .donation-card {
-  background: linear-gradient(var(--warna-donation-card-bg-start), var(--warna-donation-card-bg-end));
   border-radius: 5px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .donation-card-1 {
-  background-color: var(--warna-bg-kartu);
   border-radius: 5px;
   padding: 16px;
 }
 
 .donation-card-2 {
-  background: linear-gradient(var(--warna-bg-kartu), var(--warna-donation-card-bg-start));
   border-radius: 5px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

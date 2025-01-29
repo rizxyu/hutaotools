@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </td>
             <td>Download MP4 (${video.resolusi})</td>
             <td>
-              <button class="downloadBtn bg-purple-600 py-2 px-4 rounded hover:bg-purple-700" data-url="${video.url}">
+              <button class="downloadBtn btn-primary-submit py-2 px-4 rounded hover:bg-purple-700" data-url="${video.url}">
                 <i class="fas fa-download"></i>
               </button>
             </td>
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </td>
             <td>Download Gambar</td>
             <td>
-              <button class="downloadBtn bg-purple-600 py-2 px-4 rounded hover:bg-purple-700" data-url="${image}">
+              <button class="downloadBtn btn-primary-submit py-2 px-4 rounded hover:bg-purple-700" data-url="${image}">
                 <i class="fas fa-download"></i>
               </button>
             </td>
