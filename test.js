@@ -96,8 +96,9 @@ async function validasi(url, maxRetries = 3) {
   while (attempt < maxRetries) {
     try {
       console.log(`Percobaan ${attempt + 1}...`);
-      const result = await scrapeKuaishou(url);
+      const result = await scrapeKuaishou("https://v.kuaishou.com/g6Yr5O");
       console.log("Scraping berhasil!");
+      console.log(result)
       return result;
     } catch (error) {
       attempt++;
@@ -110,3 +111,5 @@ async function validasi(url, maxRetries = 3) {
     }
   }
 }
+
+validasi()

@@ -179,8 +179,15 @@ document.addEventListener("DOMContentLoaded", () => {
       async function downloadFile(link) {
         try {
           if(
-            !link.includes(".dlapi.app")
+            !link?.includes(".dlapi.app")
           ) {
+            const linkElement = document.createElement("a");
+
+            linkElement.href = link;
+
+            linkElement.target = "_blank";
+            linkElement.click();
+          } else {
             const fileResponse = await fetch(link, {
               method: "HEAD",
               headers: {
@@ -222,12 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const linkElement = document.createElement("a");
             linkElement.href = `/download?url=${encodeURIComponent(link)}&name=${encodeURIComponent(fileName)}`;
             linkElement.click();
-          } else {
-            const linkElement = document.createElement("a");
-            linkElement.href = link;
-            linkElement.target = "_blank";
-            linkElement.click();
-          }
+          } 
         } catch (error) {
           console.log("Gagal mengunduh file:", error);
           alert("Terjadi kesalahan saat mengunduh file.\n" + error);
