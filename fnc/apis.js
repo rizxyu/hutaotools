@@ -3,6 +3,7 @@ const { soundcloud } = require("../lib/soundcloud");
 const ig = require("../lib/ig");
 const spotify = require("../lib/spotify");
 const yt = require("../lib/ytdl");
+const kwaii = require("../lib/kuaishou");
 
 module.exports = async function(req, res) {
   const { url } = req.body;
@@ -23,6 +24,9 @@ module.exports = async function(req, res) {
       ress = await spotify(url);
     } else if (/(?:http(?:s|):\/\/|)(?:(?:www\.|)?(?:music\.)?youtube(?:\-nocookie|)\.com\/(?:shorts\/)?(?:watch\?.*(?:|\&)v=|embed\/|v\/)?|youtu\.be\/)([-_0-9A-Za-z]{11})/i.test(url)) {
       ress = await yt(url);
+    } else if(/^https?:\/\/v\.kuaishou\.com\/[a-zA-Z0-9]+$/i.test(url)) {
+      ress = await kwaii(url);
+    
     } else {
       ress = {
         status: 400,

@@ -43,7 +43,6 @@ async function scrapeKuaishou(url) {
       const jsonString = scriptTag.match(/window\.INIT_STATE\s*=\s*(\{.*\});?/)[1];
       const result = JSON.parse(jsonString);
 
-      // Dekode key dan cari key yang mengandung "photo"
       const decodedResult = Object.keys(result).reduce((acc, key) => {
         const decodedKey = decodeKey(key);
         acc[decodedKey] = result[key];
@@ -73,12 +72,22 @@ async function scrapeKuaishou(url) {
         },
         caption: x_1a.photo.caption,
       };
-
+      if (x_1a.atlas) {
+        res.slide = {
+          size: x_1a.atlas.size,
+          urls: x_1a.atlas.list.map(v => "https://p5.a.yximgs.com"+v)
+        };
+      };
+      
       if (x_1a.photo.photoType === "VIDEO") {
         res.video = x_1a.photo.manifest.adaptationSet[0].representation[0].url;
       }
       if (x_1a.photo.soundTrack) {
-        res.sound = x_1a.photo.soundTrack;
+        res.sound = { 
+          name: x_1a.photo.soundTrack.name,
+          cover: x_1a.photo.soundTrack.imageUrls[0].url,
+          audio: x_1a.photo.soundTrack.audioUrls[0].url
+        };
       }
 
       return res;
@@ -95,8 +104,8 @@ async function validasi(url, maxRetries = 3) {
   let attempt = 0;
   while (attempt < maxRetries) {
     try {
-      console.log(`Percobaan ${attempt + 1}...`);
-      const result = await scrapeKuaishou("https://v.kuaishou.com/g6Yr5O");
+      console.log(`Step ${attempt + 1}...`);
+      const result = await scrapeKuaishou("https://v.kuaishou.com/mMy2au");
       console.log("Scraping berhasil!");
       console.log(result)
       return result;
@@ -104,8 +113,8 @@ async function validasi(url, maxRetries = 3) {
       attempt++;
       console.error(error.message);
       if (attempt >= maxRetries) {
-        console.error("Script scrape sudah basi, perlu diperbarui.");
-        throw new Error("Scraping gagal setelah 3 kali percobaan.");
+        console.error("Script scrape sudah expired, perlu diperbarui.");
+        throw new Error("Scraping gagal setelah 3 kali step.");
       }
       console.log("Mengulangi percobaan...");
     }

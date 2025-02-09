@@ -3,149 +3,141 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("#content > div");
 
   // Menambahkan event listener untuk tombol navigasi
-  for(const button of nav_buttons) {
+  nav_buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.getAttribute("data-target");
 
-      sections.forEach((section) => {
-        section.classList.add("hidden");
-      });
+      sections.forEach((section) => section.classList.add("hidden"));
 
-      // Hanya tampilkan section yang sesuai
+      // Tampilkan section yang sesuai, jika ada
       const targetSection = document.getElementById(target);
-      targetSection.classList.remove("hidden");
+      if (targetSection) targetSection.classList.remove("hidden");
 
       nav_buttons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // Jika target adalah "changelog", pastikan changelog dimuat
-      if(target === "changelog") {
-        fetchChangelog(); // Panggil fetchChangelog hanya saat changelog dipilih
+      // Jika target adalah "changelog", panggil fungsi fetchChangelog
+      if (target === "changelog") {
+        fetchChangelog();
       }
     });
-  };
+  });
 
   document.getElementById("downloadForm").addEventListener("submit", async (event) => {
     event.preventDefault(); // Mencegah reload halaman
 
     const urlInput = document.getElementById("urlInput").value;
-    if(!urlInput) {
+    if (!urlInput) {
       alert("Masukkan URL terlebih dahulu!");
       return;
     }
+
+    // Sembunyikan elemen awal dan tampilkan loader
     document.getElementById("startImage").classList.add("hidden");
     document.getElementById("startText").classList.add("hidden");
-    let errorElement = document.getElementById("errorElement");
-    let loaderja = document.getElementById("loader");
+    const errorElement = document.getElementById("errorElement");
+    const loaderja = document.getElementById("loader");
     loaderja.classList.remove("hidden");
+
     try {
       const resultCard = document.getElementById("resultCard");
-
-      resultCard.innerHTML = ""; // Bersihkan konten resultCard
+      resultCard.innerHTML = "";
       resultCard.classList.add("hidden");
-
-      //errorElement.innerHTML = ""; // Bersihkan konten resultCard
       errorElement.classList.add("hidden");
 
+      // Mengirim request ke endpoint API
       const response = await fetch("/api/execute", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          url: urlInput
-        }),
+        body: JSON.stringify({ url: urlInput }),
       });
 
-      if(!response.ok) {
+      if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
-      document.getElementById("startImage").classList.add("hidden");
-      document.getElementById("startText").classList.add("hidden");
-
 
       const data = await response.json();
 
-      if(data.status !== 200) throw new Error(`Error: ${data.message || "Response status not OK"}`);
+      if (data.status !== 200) {
+        throw new Error(`Error: ${data.message || "Response status not OK"}`);
+      }
 
-      //errorElement.innerHTML = "";
-      errorElement.classList.add("hidden");
-
-      const cover = data.thumbnail // cover
-      const title = data.title || ""; // title
+      // Mengambil data yang diperlukan
+      const cover = data.thumbnail; // Thumbnail
+      const title = data.title || ""; // Judul
       const musicLinks = data.music;
       const videoLinks = data.video;
       const imageLinks = data.images;
 
-      // Render tabel sesuai tipe result
+      // Membangun konten tabel untuk masing-masing jenis file
       let tableContent = "";
 
-      if(musicLinks) {
+      // Perbaikan: Atribut data-url pada tombol download musik sebelumnya tertulis salah.
+      if (musicLinks && Array.isArray(musicLinks)) {
         musicLinks.forEach((music) => {
           tableContent += `
-          <tr>
-            <td class="flex items-center justify-center gap-2 py-4 px-2">
-              <i class="fas fa-music"></i>
-            </td>
-            <td>Download MP3 (${music.resolusi})</td>
-            <td>
-              <button class="downloadBtn btn-primary-submit py-2 px-4 rounded data-url="${music.url}">
-                <i class="fas fa-download"></i>
-              </button>
-            </td>
-          </tr>
-        `;
+            <tr>
+              <td class="flex items-center justify-center gap-2 py-4 px-2">
+                <i class="fas fa-music"></i>
+              </td>
+              <td>Download MP3 (${music.resolusi})</td>
+              <td>
+                <button class="downloadBtn btn-primary-submit py-2 px-4 rounded" data-url="${music.url}">
+                  <i class="fas fa-download"></i>
+                </button>
+              </td>
+            </tr>
+          `;
         });
       }
 
-      if(videoLinks) {
+      if (videoLinks && Array.isArray(videoLinks)) {
         videoLinks.forEach((video) => {
           tableContent += `
-          <tr>
-            <td class="flex items-center justify-center gap-2 py-4 px-2">
-              <i class="fas fa-video"></i>
-            </td>
-            <td>Download MP4 (${video.resolusi})</td>
-            <td>
-              <button class="downloadBtn btn-primary-submit py-2 px-4 rounded hover:bg-purple-700" data-url="${video.url}">
-                <i class="fas fa-download"></i>
-              </button>
-            </td>
-          </tr>
-        `;
-        });
-      }
-      // Jika ada gambar
-      if(imageLinks) {
-        imageLinks.forEach((image, index) => {
-          tableContent += `
-          <tr>
-            <td class="flex items-center justify-center gap-2">
-              <i class="fas fa-image"></i> ${index + 1}
-            </td>
-            <td>Download Gambar</td>
-            <td>
-              <button class="downloadBtn btn-primary-submit py-2 px-4 rounded hover:bg-purple-700" data-url="${image}">
-                <i class="fas fa-download"></i>
-              </button>
-            </td>
-          </tr>
-        `;
+            <tr>
+              <td class="flex items-center justify-center gap-2 py-4 px-2">
+                <i class="fas fa-video"></i>
+              </td>
+              <td>Download MP4 (${video.resolusi})</td>
+              <td>
+                <button class="downloadBtn btn-primary-submit py-2 px-4 rounded hover:bg-purple-700" data-url="${video.url}">
+                  <i class="fas fa-download"></i>
+                </button>
+              </td>
+            </tr>
+          `;
         });
       }
 
+      if (imageLinks && Array.isArray(imageLinks)) {
+        imageLinks.forEach((image, index) => {
+          tableContent += `
+            <tr>
+              <td class="flex items-center justify-center gap-2">
+                <i class="fas fa-image"></i> ${index + 1}
+              </td>
+              <td>Download Gambar</td>
+              <td>
+                <button class="downloadBtn btn-primary-submit py-2 px-4 rounded hover:bg-purple-700" data-url="${image}">
+                  <i class="fas fa-download"></i>
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      // Menampilkan hasil di resultCard
       resultCard.innerHTML = `
         <span class="text-xs font-semibold px-2 py-1 shadow rounded">
           <span>Hasil</span> <span class="text-purple-400">Download</span>
         </span>
-
         <div class="flex justify-center mb-4">
           <img src="${cover}" alt="Thumbnail" class="w-40 h-40 rounded my-4">
         </div>
-
         <p class="text-lg font-semibold text-center mb-4">${title}</p>
-
-        <!-- Tabel Download -->
         <table class="table-auto w-full text-left border-separate border-spacing-2">
           <thead>
             <tr>
@@ -162,81 +154,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
       resultCard.classList.remove("hidden");
       loaderja.classList.add("hidden");
-      // hide gambar sama teks yg hutao
-      document.getElementById("startImage").classList.add("hidden");
-      document.getElementById("startText").classList.add("hidden");
 
-      // Event listener untuk tombol download
+      // Tambahkan event listener untuk setiap tombol download
       document.querySelectorAll(".downloadBtn").forEach((button) => {
         button.addEventListener("click", async () => {
           const downloadLink = button.getAttribute("data-url");
-          await downloadFile(downloadLink);
+          await downloadFile(downloadLink, title);
         });
       });
 
+      // Pastikan elemen awal tetap tersembunyi
+      document.getElementById("startImage").classList.add("hidden");
+      document.getElementById("startText").classList.add("hidden");
 
       // Fungsi untuk mengunduh file
-      async function downloadFile(link) {
+      async function downloadFile(link, title) {
         try {
-          if(
-            !link?.includes(".dlapi.app")
-          ) {
+          // Jika link tidak berasal dari domain .dlapi.app, buka di tab baru
+          if (!link?.includes(".dlapi.app")) {
             const linkElement = document.createElement("a");
-
             linkElement.href = link;
-
             linkElement.target = "_blank";
             linkElement.click();
           } else {
-            const fileResponse = await fetch(link, {
-              method: "HEAD",
-              headers: {
-                //"Content-Type": "application/force-download"
-              }
-            });
-            if(!fileResponse.ok) {
+            // Jika link berasal dari .dlapi.app, lakukan HEAD request untuk mendapatkan Content-Type
+            const fileResponse = await fetch(link, { method: "HEAD" });
+            if (!fileResponse.ok) {
               throw new Error(`Gagal mengunduh file: ${fileResponse.statusText}`);
             }
 
             const contentType = fileResponse.headers.get("Content-Type");
             let fileExtension = "";
+            if (contentType === "video/mp4") fileExtension = ".mp4";
+            else if (contentType === "audio/mpeg") fileExtension = ".mp3";
+            else if (contentType && contentType.startsWith("image")) fileExtension = ".jpg";
 
-            // Tentukan ekstensi berdasarkan MIME type
-            if(contentType === "video/mp4") fileExtension = ".mp4";
-            else if(contentType === "audio/mpeg") fileExtension = ".mp3";
-            else if(contentType.startsWith("image")) fileExtension = ".jpg"; // asumsi gambar jpg
-
-            //const fileBlob = await fileResponse.blob();
+            // Menentukan nama file menggunakan judul (title) jika tersedia
             const fileName = (
-              (
-                title ||
-                `beta.wzblueline.xyz_${Date.now()}`
-              ) +
-              (
-                fileExtension ||
-                ""
-              )
+              (title || `download_${Date.now()}`) + (fileExtension || "")
             )
               .trim()
-              .replace(fileExtension + fileExtension, fileExtension); // Terkadang double kayak gini : filename.mp3.mp3
+              .replace(fileExtension + fileExtension, fileExtension);
 
-            //const url = window.URL.createObjectURL(fileBlob);
-            //const linkElement = document.createElement("a");
-            //linkElement.href = url;
-            //linkElement.download = fileName;
-            //linkElement.click();
-            //window.URL.revokeObjectURL(url);
             const linkElement = document.createElement("a");
             linkElement.href = `/download?url=${encodeURIComponent(link)}&name=${encodeURIComponent(fileName)}`;
+            // Opsional: menambahkan atribut download untuk memaksa unduh dengan nama file yang sudah ditentukan
+            linkElement.setAttribute("download", fileName);
             linkElement.click();
-          } 
+          }
         } catch (error) {
-          console.log("Gagal mengunduh file:", error);
-          alert("Terjadi kesalahan saat mengunduh file.\n" + error);
+          console.error("Gagal mengunduh file:", error);
+          alert("Terjadi kesalahan saat mengunduh file.\n" + error.message);
         }
       }
     } catch (error) {
-      console.log("Gagal memproses URL:", error);
+      console.error("Gagal memproses URL:", error);
       document.getElementById("loader").classList.add("hidden");
       errorElement.classList.remove("hidden");
       document.getElementById("startImage").classList.add("hidden");

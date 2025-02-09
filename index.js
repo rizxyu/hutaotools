@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const apis = require("./fnc/apis");
 const cors = require("cors");
-
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 443;
