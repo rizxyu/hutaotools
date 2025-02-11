@@ -30,9 +30,9 @@
    <script src="/js/dekstop.js"></script>
   </head>
   <body class="p-4 md:px-24 lg:px-32">
-    <div id="content" class="p-2">
+    <div id="content" class="p-2 overflow-y-auto">
       <!-- Home section -->
-      <div id="home">
+      <div id="home" class="overflow-y-auto">
         <form id="downloadForm" class="flex items-center justify-center gap-2 mb-6">
           <input type="url" id="urlInput" placeholder="Masukkan URL Disini.." required class="input input-bordered w-full max-w-xs flex-1 p-2 rounded outline-none focus:ring-2 focus:ring-purple-500">
           <button type="submit" class="btn-primary-submit h-12 w-16 flex justify-center items-center">
@@ -60,19 +60,20 @@
           </p>
         </div>
         <!-- Card Hasil Download -->
-      <div id="resultCard" class="shadow-2xl border border-purple-400 rounded-2xl p-4 hidden 
-          h-[calc(100vh-150px)] overflow-y-auto">
+<div id="resultCard" class="shadow-2xl border border-purple-400 rounded-2xl p-4 hidden 
+    w-fit max-w-full mx-auto">
       </div>
         
         <!-- Link yang Mendukung -->
-        <div id="supportContainer" class="left-1/2 bottom-20 transform -translate-x-1/2">
+<div id="supportContainer" class="fixed left-1/2 bottom-20 transform -translate-x-1/2 flex flex-col items-center gap-2">
+  <!-- Tombol -->
   <button id="supportBtn" class="flex items-center gap-2 font-semibold text-sm transition-transform duration-300">
     <i id="supportIcon" class="fa-solid fa-arrow-up transition-transform duration-300"></i>
     <span>Link yang Mendukung</span>
   </button>
 
   <!-- Daftar Platform -->
-  <div id="supportList" class="hidden mt-2 flex flex-wrap gap-2 justify-center max-w-xs mx-auto">
+  <div id="supportList" class="hidden flex flex-wrap justify-center gap-2 max-w-xs">
     <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
       <i class="fa-brands fa-youtube text-red-600"></i>
       <span class="text-xs">YouTube</span>

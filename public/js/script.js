@@ -143,25 +143,32 @@ document.addEventListener("DOMContentLoaded", async() => {
 
       // Menampilkan hasil di resultCard
       resultCard.innerHTML = `
-        <span class="text-xs font-semibold px-2 py-1 shadow rounded">
-          <span>Hasil</span> <span class="text-purple-400">Download</span>
-        </span>
-        <div class="flex justify-center mb-4">
-          <img src="${cover}" alt="Thumbnail" class="w-40 h-40 rounded my-4">
-        </div>
-        <p class="text-lg font-semibold text-center mb-4">${title}</p>
-        <table class="table-auto w-full text-left border-separate border-spacing-2">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            ${tableContent}
-          </tbody>
-        </table>
+<div class="max-h-96 overflow-y-auto px-4 py-2">
+  <span class="text-xs font-semibold px-2 py-1 shadow rounded block">
+    <span>Hasil</span> <span class="text-purple-400">Download</span>
+  </span>
+
+  <div class="flex justify-center my-4">
+    <img src="${cover}" alt="Thumbnail" class="w-40 h-40 rounded">
+  </div>
+
+  <p class="text-lg font-semibold text-center mb-4">${title}</p>
+
+  <div class="overflow-x-auto">
+    <table class="table-auto w-full text-left border-separate border-spacing-2">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        ${tableContent}
+      </tbody>
+    </table>
+  </div>
+</div>
       `;
 
       resultCard.classList.remove("hidden");
