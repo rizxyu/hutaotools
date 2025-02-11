@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.7.9",
     "axios-cookiejar-support": "^5.0.5",
+    "baileys": "github:WhiskeySockets/Baileys",
     "body-parser": "^1.20.3",
     "browser-id3-writer": "^6.1.0",
     "cheerio": "^1.0.0",
@@ -22,6 +23,7 @@
     "form-data": "^4.0.1",
     "https": "^1.0.0",
     "node-fetch": "^3.3.2",
+    "ruhend-scraper": "^8.0.8",
     "tough-cookie": "^5.1.0"
   },
   "devDependencies": {

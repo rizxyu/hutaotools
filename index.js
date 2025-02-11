@@ -5,9 +5,16 @@ const http = require("http");
 const path = require("path");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-const apis = require("./fnc/apis");
 const cors = require("cors");
 require('dotenv').config();
+const axios = require("axios");
+
+const apis = require("./fnc/apis");
+const checkType = require("./fnc/checktype");
+const validateToken = require("./fnc/validate");
+const downloadf = require("./fnc/download");
+
+global.tokenVd ??= [] //Save Token Global
 
 const app = express();
 const port = process.env.PORT || 443;
@@ -20,13 +27,12 @@ const httpsServer = https.createServer({
   cert
 }, app);
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// Menyajikan file statis (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/temp", express.static(path.join(__dirname, 'temp')));
 
@@ -36,7 +42,7 @@ app.use(async (req, res, next) => {
 
   const ip = req?.ip?.replace("::ffff:", "") || req?.ip;
   req._ip = ip;
-
+  
   res.on("finish", () => {
     const _end = Date.now();
     const total = _end - _req;
@@ -44,6 +50,7 @@ app.use(async (req, res, next) => {
     const date = `${_date.YYYY}-${_date.MM}-${_date.DD}`;
     const time = `${_date.hh}:${_date.mm}:${_date.ss}`;
 
+  
     console.log(
       "\x1b[36;1m[\x1b[32;1m" + req.method + "\x1b[36;1m]\x1b[0;0m\n",
       "Path:", req.originalUrl + "\n",
@@ -60,44 +67,18 @@ app.use(async (req, res, next) => {
   next();
 });
 
-
-// Routing untuk halaman utama
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
   console.log(req);
 });
+app.post("/api", apis);
+app.get("/checkType", checkType);
+app.get("/validate", validateToken)
+app.get("/download", downloadf);
 
-app.get("/download", async (req, res, next) => {
-  try {
-    const {
-      url,
-      name
-    } = req.query;
-    if(!url || !name) return next();
 
-    const _res = await fetch(url, {
-      headers: {
-        "User-Agent": req.get("User-Agent"),
-        ...(req.headers.range ? {
-          Range: req.headers.range
-        } : {})
-      }
-    });
-    for(const [key, value] of _res.headers.entries()) res.setHeader(key, value);
-    res.setHeader("Transfer-Encoding", "chunked");
-    res.setHeader("Content-Disposition", `attachment; filename*=UTF-8''${encodeURIComponent(name)}`);
-    _res.body.pipe(res.status(_res.status));
-  } catch(e) {
-    console.error(e)
-    next();
-  };
-});
 
 let server
-
-app.post("/api/execute", apis);
-
-
 // For development without httpServer
 /*
 app.listen(3000, () => {

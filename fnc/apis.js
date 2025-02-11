@@ -7,10 +7,18 @@ const kwaii = require("../lib/kuaishou");
 
 module.exports = async function(req, res) {
   const { url } = req.body;
+  const ip = req.ip.replace("::ffff:", "") || req.ip;
+    const authHeader = req.headers.authorization;
 
-  if (!url) {
-    return res.status(400).json({ error: "URL diperlukan." });
-  }
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return res.status(401).json({ message: "Unauthorized: Token is missing or invalid" });
+    }
+    
+    const token = authHeader.split(" ")[1];
+    const isValid = global.tokenVd.some(entry => entry.ip === ip && entry.token === token);
+    if (!isValid) return res.status(403).json({ message: "Forbidden: Invalid token or IP mismatch" });
+    
+    if (!url) return res.status(400).json({ error: "URL diperlukan." });
 
   let ress;
   try {

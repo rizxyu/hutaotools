@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
   const nav_buttons = document.querySelectorAll(".nav-btn");
   const sections = document.querySelectorAll("#content > div");
 
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  const token = await checkHeaders();
 
   document.getElementById("downloadForm").addEventListener("submit", async (event) => {
     event.preventDefault(); // Mencegah reload halaman
@@ -44,12 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
       resultCard.innerHTML = "";
       resultCard.classList.add("hidden");
       errorElement.classList.add("hidden");
-
+      
       // Mengirim request ke endpoint API
-      const response = await fetch("/api/execute", {
+      const response = await fetch("/api", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "authorization": `Bearer ${token}`
         },
         body: JSON.stringify({ url: urlInput }),
       });
@@ -170,36 +172,28 @@ document.addEventListener("DOMContentLoaded", () => {
       // Fungsi untuk mengunduh file
       async function downloadFile(link, title) {
         try {
-          // Jika link tidak berasal dari domain .dlapi.app, buka di tab baru
           if (!link?.includes(".dlapi.app")) {
-            const linkElement = document.createElement("a");
-            linkElement.href = link;
-            linkElement.target = "_blank";
-            linkElement.click();
+          const response = await fetch(`/checkType?url=${encodeURIComponent(link)}`);
+          const result = await response.json();
+          
+          if (!result.success) {
+            throw new Error(`Gagal mendapatkan info file: ${result.message}`);
+          }
+          
+          const fileName = (
+            (title || `download_${Date.now()}`) + (result.extension || "")
+          ).trim().replace(result.extension + result.extension, result.extension);
+          
+          const linkElement = document.createElement("a");
+          linkElement.href = `/download?url=${encodeURIComponent(link)}&name=${encodeURIComponent(fileName)}`;
+          linkElement.setAttribute("download", fileName);
+          linkElement.click();
           } else {
-            // Jika link berasal dari .dlapi.app, lakukan HEAD request untuk mendapatkan Content-Type
-            const fileResponse = await fetch(link, { method: "HEAD" });
-            if (!fileResponse.ok) {
-              throw new Error(`Gagal mengunduh file: ${fileResponse.statusText}`);
-            }
-
-            const contentType = fileResponse.headers.get("Content-Type");
-            let fileExtension = "";
-            if (contentType === "video/mp4") fileExtension = ".mp4";
-            else if (contentType === "audio/mpeg") fileExtension = ".mp3";
-            else if (contentType && contentType.startsWith("image")) fileExtension = ".jpg";
-
-            // Menentukan nama file menggunakan judul (title) jika tersedia
-            const fileName = (
-              (title || `download_${Date.now()}`) + (fileExtension || "")
-            )
-              .trim()
-              .replace(fileExtension + fileExtension, fileExtension);
-
             const linkElement = document.createElement("a");
-            linkElement.href = `/download?url=${encodeURIComponent(link)}&name=${encodeURIComponent(fileName)}`;
-            // Opsional: menambahkan atribut download untuk memaksa unduh dengan nama file yang sudah ditentukan
-            linkElement.setAttribute("download", fileName);
+
+            linkElement.href = link;
+
+            linkElement.target = "_blank";
             linkElement.click();
           }
         } catch (error) {
@@ -216,3 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+async function checkHeaders() {
+  const response = await fetch("/validate", { method: "GET" }); // Hanya ambil header
+  console.log([...response.headers.entries()]); // Debugging: cek semua header
+  return response.headers.get("X-Auth-Token")
+}
+
