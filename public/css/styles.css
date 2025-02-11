@@ -47,6 +47,20 @@
   --warna-modal-button-hover-bg: #1d4ed8;
 }
 
+
+#supportContainer {
+  bottom: 5rem; /* Naik biar gak ketutup navbar */
+}
+#supportList {
+  max-width: 250px; 
+}
+#supportList div {
+  white-space: nowrap; /* Biar text tetap dalam satu kotak */
+}
+#navbar {
+  bottom: 0; /* Naik sedikit */
+}
+
 .bg-main {
   background-color: var(--bg-main);
 }

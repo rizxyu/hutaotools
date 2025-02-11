@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", async() => {
     });
   });
   const token = await checkHeaders();
+  
+  
+  
+  document.getElementById("supportBtn").addEventListener("click", function () {
+  const list = document.getElementById("supportList");
+  const icon = document.getElementById("supportIcon");
+
+  list.classList.toggle("hidden");
+  icon.classList.toggle("rotate-180");
+});
 
   document.getElementById("downloadForm").addEventListener("submit", async (event) => {
     event.preventDefault(); // Mencegah reload halaman

@@ -1,0 +1,604 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "https://www.snapchat.com/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYcWh0bnhnYmVyAZQ8KZ-oAZQ8KZ-UAAAAAQ",
+      "name": "Spotlight Snap",
+      "description": "",
+      "thumbnailUrl": "https://bolt-gcdn.sc-cdn.net/6/qzyOpp03uBx83595hcgEY.256.IRZXSOY?mo=GkcaDRoAGgAyAV9IAlAuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+      "uploadDate": "2025-01-06T15:09:08.372Z",
+      "interactionStatistic": [
+        {
+          "@type": "InteractionCounter",
+          "interactionType": {
+            "@type": "WatchAction"
+          },
+          "userInteractionCount": 42951
+        },
+        {
+          "@type": "InteractionCounter",
+          "interactionType": {
+            "@type": "ShareAction"
+          },
+          "userInteractionCount": 35
+        }
+      ],
+      "contentUrl": "https://bolt-gcdn.sc-cdn.net/6/qzyOpp03uBx83595hcgEY.27.IRZXSOY?mo=GmgaDRoAGgAyAV9IAlAuYAFaEFNwb3RsaWdodFNoYXJpbmeiAUAIGxIvCi0IjM1oIAFKIwoedT48Ni0vOTcpJy1LLitMRjw1Ol0zQS8zLTExNisXEPQDaAIiCxIAKgdJUlpYU09ZkAPedQ%3D%3D&uc=46",
+      "creator": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "alternateName": "nadiia_dillasya",
+        "url": "https://www.snapchat.com/add/nadiia_dillasya",
+        "name": "Nadiia Dilla syafani",
+        "image": "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvU0x6d3NYVW9XajdpSndveDZYVzRnP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,90_FMjpeg",
+        "mainEntityOfPage": {
+          "@type": "ProfilePage",
+          "@id": "https://www.snapchat.com/add/nadiia_dillasya"
+        }
+      },
+      "duration": "PT15.07S",
+      "width": "540 px",
+      "height": "960 px",
+      "encodingFormat": "video/mp4",
+      "isFamilyFriendly": true,
+      "keywords": [],
+      "ineligibleRegion": [
+        "TR"
+      ],
+      "embeddedTextCaption": ""
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SocialMediaPosting",
+      "headline": "Spotlight Snap",
+      "description": "Spotlight Snap",
+      "image": [
+        "https://bolt-gcdn.sc-cdn.net/6/qzyOpp03uBx83595hcgEY.256.IRZXSOY?mo=GkcaDRoAGgAyAV9IAlAuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46"
+      ],
+      "text": "Spotlight Snap",
+      "video": {
+        "@type": "VideoObject",
+        "@id": "https://www.snapchat.com/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYcWh0bnhnYmVyAZQ8KZ-oAZQ8KZ-UAAAAAQ",
+        "name": "Spotlight Snap",
+        "description": "",
+        "thumbnailUrl": "https://bolt-gcdn.sc-cdn.net/6/qzyOpp03uBx83595hcgEY.256.IRZXSOY?mo=GkcaDRoAGgAyAV9IAlAuYAFaEERmTGFyZ2VUaHVtYm5haWyiARAIgAIiCxIAKgdJUlpYU09ZogEQCJoKIgsSACoHSVJaWFNPWQ%3D%3D&uc=46",
+        "uploadDate": "2025-01-06T15:09:08.372Z",
+        "interactionStatistic": [
+          {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "WatchAction"
+            },
+            "userInteractionCount": 42951
+          },
+          {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "ShareAction"
+            },
+            "userInteractionCount": 35
+          }
+        ],
+        "contentUrl": "https://bolt-gcdn.sc-cdn.net/6/qzyOpp03uBx83595hcgEY.27.IRZXSOY?mo=GmgaDRoAGgAyAV9IAlAuYAFaEFNwb3RsaWdodFNoYXJpbmeiAUAIGxIvCi0IjM1oIAFKIwoedT48Ni0vOTcpJy1LLitMRjw1Ol0zQS8zLTExNisXEPQDaAIiCxIAKgdJUlpYU09ZkAPedQ%3D%3D&uc=46",
+        "creator": {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "alternateName": "nadiia_dillasya",
+          "url": "https://www.snapchat.com/add/nadiia_dillasya",
+          "name": "Nadiia Dilla syafani",
+          "image": "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvU0x6d3NYVW9XajdpSndveDZYVzRnP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,90_FMjpeg",
+          "mainEntityOfPage": {
+            "@type": "ProfilePage",
+            "@id": "https://www.snapchat.com/add/nadiia_dillasya"
+          }
+        },
+        "duration": "PT15.07S",
+        "width": "540 px",
+        "height": "960 px",
+        "encodingFormat": "video/mp4",
+        "isFamilyFriendly": true,
+        "keywords": [],
+        "ineligibleRegion": [
+          "TR"
+        ],
+        "embeddedTextCaption": ""
+      },
+      "datePublished": "2025-01-06T15:09:08.372Z",
+      "keywords": [],
+      "articleBody": "",
+      "comment": [
+        {
+          "@type": "Comment",
+          "text": "Hy",
+          "author": {
+            "@type": "Person",
+            "name": "susy",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "9661163637808578678-9974620842413459783"
+            }
+          },
+          "datePublished": "2025-01-20T07:18:24.864Z",
+          "commentCount": 2,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "8806289964362907676-11554986864506973879"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "Hy",
+          "author": {
+            "@type": "Person",
+            "name": "Dwan",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "1909014765744245384-12404919436966567573"
+            }
+          },
+          "datePublished": "2025-02-09T14:46:48.547Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "2308735848020787770-11582006905394001709"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "Hy syg",
+          "author": {
+            "@type": "Person",
+            "name": "Rafi",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "16117726909529541205-11937726755222532155"
+            }
+          },
+          "datePublished": "2025-01-22T16:26:44.558Z",
+          "commentCount": 1,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "8082100684708662998-11868891772345132208"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "Gimana kabarnya say",
+          "author": {
+            "@type": "Person",
+            "name": "defla",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "1452760876855086194-11241452439983847940"
+            }
+          },
+          "datePublished": "2025-02-01T09:35:48.027Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "2625241197303909075-12219809219756569950"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "ih",
+          "author": {
+            "@type": "Person",
+            "name": "Azzahra",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "15037429798879514383-10138611830511727596"
+            }
+          },
+          "datePublished": "2025-02-08T07:10:24.519Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "11020455760455618353-10089494498665500681"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "😍",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmad",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "706898144188448962-13120445255903823945"
+            }
+          },
+          "datePublished": "2025-02-06T10:08:09.599Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "16070645316017474025-10031551683364599611"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "cantik nya 😍😍",
+          "author": {
+            "@type": "Person",
+            "name": "Alucard",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "4517783081997583048-13543993131400231083"
+            }
+          },
+          "datePublished": "2025-02-01T18:57:34.565Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "5131048470896594041-13288022696197081673"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "siao🥰ieofdldourwoe",
+          "author": {
+            "@type": "Person",
+            "name": "Olgaris",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "12517152444644608991-12106243709595234504"
+            }
+          },
+          "datePublished": "2025-01-28T18:00:10.331Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "7092938712537385507-10284600514264999291"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "❤️",
+          "author": {
+            "@type": "Person",
+            "name": "Irfan",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "16702056094232101055-10363638669094527963"
+            }
+          },
+          "datePublished": "2025-01-24T12:13:55.172Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "15921620450269219739-11829718851007421811"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "Jadi pengen",
+          "author": {
+            "@type": "Person",
+            "name": "Muttaqin",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "12843161249065682092-13430784125628100302"
+            }
+          },
+          "datePublished": "2025-02-10T12:00:05.436Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "1787259654323193335-9425897933296055442"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "❤️❤️❤️❤️❤️",
+          "author": {
+            "@type": "Person",
+            "name": "Syari",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "5009123150351124168-11018297210495939551"
+            }
+          },
+          "datePublished": "2025-02-10T07:58:45.581Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "2604962325130792671-11927394488246632054"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "❤️❤️❤️ salam kenal",
+          "author": {
+            "@type": "Person",
+            "name": "Tamrin",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "464079843721564112-11253291188478126419"
+            }
+          },
+          "datePublished": "2025-02-10T05:54:52.735Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "13820809587276071213-12605771601933954711"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "❤️❤️❤️❤️❤️",
+          "author": {
+            "@type": "Person",
+            "name": "Satya",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "16539699959506354362-13298784745706799056"
+            }
+          },
+          "datePublished": "2025-02-10T03:13:31.130Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "12464478545498098202-11566372712700415811"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "Selamat siang",
+          "author": {
+            "@type": "Person",
+            "name": "Abdullah",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "10722694580299448512-13046651427281960385"
+            }
+          },
+          "datePublished": "2025-02-10T02:47:20.673Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "4725458826674390568-9647585944881448278"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "😍",
+          "author": {
+            "@type": "Person",
+            "name": "Nanangfendi",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "4087962044889385970-10052245371120614351"
+            }
+          },
+          "datePublished": "2025-02-09T18:50:12.920Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "7893638674515379813-9955789587535989756"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "Cantik kali jak",
+          "author": {
+            "@type": "Person",
+            "name": "Indah",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "3119039840913867344-13206641224680482350"
+            }
+          },
+          "datePublished": "2025-02-09T17:12:40.321Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "4771090570880173797-10078417089139948461"
+          },
+          "comment": []
+        },
+        {
+          "@type": "Comment",
+          "text": "😍❤️",
+          "author": {
+            "@type": "Person",
+            "name": "Adelian",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "replyPosterId",
+              "value": "13806060558629162764-9648921066741770686"
+            }
+          },
+          "datePublished": "2025-02-09T15:24:11.120Z",
+          "commentCount": 0,
+          "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": {
+              "@type": "LikeAction"
+            },
+            "userInteractionCount": 0
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "replyId",
+            "value": "8954631287624778105-11482801978003384920"
+          },
+          "comment": []
+        }
+      ],
+      "commentCount": 198,
+      "author": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "alternateName": "nadiia_dillasya",
+        "url": "https://www.snapchat.com/add/nadiia_dillasya",
+        "name": "Nadiia Dilla syafani",
+        "image": "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvU0x6d3NYVW9XajdpSndveDZYVzRnP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,90_FMjpeg",
+        "mainEntityOfPage": {
+          "@type": "ProfilePage",
+          "@id": "https://www.snapchat.com/add/nadiia_dillasya"
+        }
+      }
+    }
+  ]
+}

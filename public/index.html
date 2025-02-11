@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="/js/script.js"></script>
-    <script src="/js/modal.js"></script>
    <script src="/js/mode.js"></script>
    <script src="/js/dekstop.js"></script>
   </head>
@@ -61,9 +60,45 @@
           </p>
         </div>
         <!-- Card Hasil Download -->
-        <div id="resultCard" class="shadow-2xl border border-purple-400 rounded-2xl p-4 overflow-auto hidden max-h-[calc(100vh-70px)]">
-          <!-- Label -->
-        </div>
+      <div id="resultCard" class="shadow-2xl border border-purple-400 rounded-2xl p-4 hidden 
+          h-[calc(100vh-150px)] overflow-y-auto">
+      </div>
+        
+        <!-- Link yang Mendukung -->
+        <div id="supportContainer" class="left-1/2 bottom-20 transform -translate-x-1/2">
+  <button id="supportBtn" class="flex items-center gap-2 font-semibold text-sm transition-transform duration-300">
+    <i id="supportIcon" class="fa-solid fa-arrow-up transition-transform duration-300"></i>
+    <span>Link yang Mendukung</span>
+  </button>
+
+  <!-- Daftar Platform -->
+  <div id="supportList" class="hidden mt-2 flex flex-wrap gap-2 justify-center max-w-xs mx-auto">
+    <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
+      <i class="fa-brands fa-youtube text-red-600"></i>
+      <span class="text-xs">YouTube</span>
+    </div>
+    <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
+      <i class="fa-brands fa-spotify text-green-500"></i>
+      <span class="text-xs">Spotify</span>
+    </div>
+    <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
+      <i class="fa-brands fa-soundcloud text-orange-500"></i>
+      <span class="text-xs">SoundCloud</span>
+    </div>
+    <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
+      <i class="fa-brands fa-tiktok text-black"></i>
+      <span class="text-xs">TikTok</span>
+    </div>
+    <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
+      <i class="fa-brands fa-instagram text-pink-500"></i>
+      <span class="text-xs">Instagram</span>
+    </div>
+    <div class="flex items-center gap-1 px-2 py-1 bg-white/20 rounded">
+      <i class="fa-brands fa-facebook text-blue-600"></i>
+      <span class="text-xs">Facebook</span>
+    </div>
+  </div>
+</div>
       </div>
   <!-- Card Hasil Download -->
   <div id="tools" class="hidden">
@@ -107,13 +142,6 @@
       </div>
 
 <div id="lainnya" class="hidden space-y-0">
-  <!-- Kartu: Apa itu Hutao Tools -->
-<div onclick="apaItuHutaoTools.showModal();" class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
-  <i style="background-color: var(--warna-icon-biru);" class="fas fa-cogs rounded text-white w-9 h-8 text-xs flex justify-center items-center"></i>
-  <span class="justify-center items-center w-full p-1 mx-1">Apa Itu Hutao Tools</span>
-  <i class="fas fa-chevron-right flex justify-center items-center"></i>
-</div>
- <hr>
  
   <!-- Kartu: Contributors -->
 <div class="flex rounded-2xl bg-base-300 p-3 w-full font-bold">
@@ -181,18 +209,6 @@
       </nav>
     </div>
     
-    
-    
-    <!---Modal----->
-  <!---Apa itu hutao tools-->
-    <dialog id="apaItuHutaoTools" class="modal">
-  <div class="modal-box">
-    <h3 class="text-lg font-bold">Apa Itu Hutao Tools!</h3>
-    <p class="py-4">Hutao Tools Adalah....</p>
-  </div>
-  <form method="dialog" class="modal-backdrop">
-    <button>close</button>
-  </form>
-</dialog>
+
   </body>
 </html>

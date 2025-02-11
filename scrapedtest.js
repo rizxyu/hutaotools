@@ -1,124 +1,46 @@
 const axios = require("axios");
-const cheerio = require("cheerio");
+const fs = require("fs");
+const { JSDOM } = require("jsdom");
 
-/**
- * Fungsi untuk mendekode key terenkripsi
- * @param {string} encodedKey
- * @returns {string} decodedKey
- */
-function decodeKey(encodedKey) {
-  const unicodeDecoded = encodedKey.replace(/\\u[0-9a-fA-F]{4}/g, (match) =>
-    String.fromCharCode(parseInt(match.replace("\\u", ""), 16))
-  );
-  return unicodeDecoded
-    .split("")
-    .map((char) => {
-      if (char >= "a" && char <= "z") {
-        return String.fromCharCode(((char.charCodeAt(0) - 97 - 1 + 26) % 26) + 97);
-      } else if (char >= "A" && char <= "Z") {
-        return String.fromCharCode(((char.charCodeAt(0) - 65 - 1 + 26) % 26) + 65);
-      } else {
-        return char;
-      }
-    })
-    .join("");
-}
-
-/**
- * Fungsi untuk melakukan scraping dan parsing data dari Kuaishou
- * @param {string} url
- * @returns {Object} result JSON hasil scraping
- */
-async function scrapeKuaishou(url) {
+async function scrapeSnapchat() {
   try {
-    const { data: html } = await axios.get(url);
-    const $ = cheerio.load(html);
-
-    // Cari elemen <script> yang berisi INIT_STATE
-    const scriptTag = $("script")
-      .filter((_, el) => $(el).html().includes("window.INIT_STATE"))
-      .html();
-
-    if (scriptTag) {
-      const jsonString = scriptTag.match(/window\.INIT_STATE\s*=\s*(\{.*\});?/)[1];
-      const result = JSON.parse(jsonString);
-
-      const decodedResult = Object.keys(result).reduce((acc, key) => {
-        const decodedKey = decodeKey(key);
-        acc[decodedKey] = result[key];
-        return acc;
-      }, {});
-
-      const photoKey = Object.keys(decodedResult).find((key) => {
-        const data = decodedResult[key];
-        return data && data.photo; // Key yang memiliki variabel `photo`
-      });
-
-      if (!photoKey) {
-        throw new Error("Key dengan variabel 'photo' tidak ditemukan.");
+    const { data } = await axios.get("https://www.snapchat.com/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYcWh0bnhnYmVyAZQ8KZ-oAZQ8KZ-UAAAAAQ", {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       }
+    });
 
-      const x_1a = decodedResult[photoKey];
+    const dom = new JSDOM(data);
+    const scripts = dom.window.document.querySelectorAll('script[type="application/ld+json"]');
 
-      // Menyusun JSON hasil
-      const res = {
-        userInfo: {
-          id: x_1a.photo.userId,
-          username: x_1a.photo.kwaiId,
-          fullname: x_1a.photo.userName,
-          avatar: x_1a.photo.headUrl,
-          sex: x_1a.photo.userSex,
-          stats: x_1a.counts,
-        },
-        caption: x_1a.photo.caption,
-      };
-      if (x_1a.atlas) {
-        res.slide = {
-          size: x_1a.atlas.size,
-          urls: x_1a.atlas.list.map(v => "https://p5.a.yximgs.com"+v)
-        };
-      };
-      
-      if (x_1a.photo.photoType === "VIDEO") {
-        res.video = x_1a.photo.manifest.adaptationSet[0].representation[0].url;
-      }
-      if (x_1a.photo.soundTrack) {
-        res.sound = { 
-          name: x_1a.photo.soundTrack.name,
-          cover: x_1a.photo.soundTrack.imageUrls[0].url,
-          audio: x_1a.photo.soundTrack.audioUrls[0].url
-        };
-      }
+    let jsonData = null;
+    scripts.forEach(script => {
+      try {
+        const parsedData = JSON.parse(script.textContent);
+        if (parsedData["@context"] === "https://schema.org") {
+          jsonData = {
+            status: 200,
+            thumbnail: parsedData["@graph"][0].thumbnailUrl,
+            title: parsedData["@graph"][0].name,
+            author: parsedData["@graph"][0].creator,
+            video: [{
+              resolusi: "Watermark",
+              url: parsedData["@graph"][0].contentUrl
+            }]
+          }
+        }
+      } catch (e) {}
+    });
 
-      return res;
+    if (jsonData) {
+      console.log("JSON ditemukan:");
+      console.log(JSON.stringify(jsonData, null, 2));
     } else {
-      throw new Error("INIT_STATE tidak ditemukan.");
+      console.log("Tidak ditemukan data JSON yang sesuai.");
     }
   } catch (error) {
-    throw new Error(`Gagal scrape: ${error.message}`);
+    console.error("Gagal mengambil data:", error.message);
   }
 }
 
-
-async function validasi(url, maxRetries = 3) {
-  let attempt = 0;
-  while (attempt < maxRetries) {
-    try {
-      console.log(`Step ${attempt + 1}...`);
-      const result = await scrapeKuaishou("https://v.kuaishou.com/mMy2au");
-      console.log("Scraping berhasil!");
-      console.log(result)
-      return result;
-    } catch (error) {
-      attempt++;
-      console.error(error.message);
-      if (attempt >= maxRetries) {
-        console.error("Script scrape sudah expired, perlu diperbarui.");
-        throw new Error("Scraping gagal setelah 3 kali step.");
-      }
-      console.log("Mengulangi percobaan...");
-    }
-  }
-}
-
-validasi()
+scrapeSnapchat();
