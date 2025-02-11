@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/temp", express.static(path.join(__dirname, 'temp')));
+app.use("/cdn", express.static(path.join(__dirname, 'cdn')));
 
 
 app.use(async (req, res, next) => {
