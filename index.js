@@ -13,11 +13,16 @@ const apis = require("./fnc/apis");
 const checkType = require("./fnc/checktype");
 const validateToken = require("./fnc/validate");
 const downloadf = require("./fnc/download");
+const ai = require("./fnc/ai");
 
 global.tokenVd ??= [] //Save Token Global
 
 const app = express();
 const port = process.env.PORT || 443;
+
+
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 const key = fs.readFileSync("privkey.pem", "UTF8");
 const cert = fs.readFileSync("cert.pem", "UTF8");
@@ -26,6 +31,17 @@ const httpsServer = https.createServer({
   key,
   cert
 }, app);
+// Mapping negara ke bahasa
+
+const countryToLang = {
+    "ID": "id",  
+    "US": "en",  // Amerika
+    "JP": "ja",  // Jepang
+    "CN": "zh",  // China
+    "FR": "fr",  // Prancis
+    "DE": "de",  // Jerman
+};
+
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -35,7 +51,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/cdn", express.static(path.join(__dirname, 'cdn')));
-
+app.use("/lang", express.static(path.join(__dirname, 'lang')));
 
 app.use(async (req, res, next) => {
   const _req = Date.now()
@@ -71,11 +87,36 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
   console.log(req);
 });
+app.get("/hd", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "enhance.html"));
+  console.log(req);
+});
 app.post("/api", apis);
+app.post("/ai/hd", ai);
 app.get("/checkType", checkType);
 app.get("/validate", validateToken)
 app.get("/download", downloadf);
+app.get("/get-userCountry", async (req, res) => {
+    try {
+        const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+        const cleanIp = ip.replace("::ffff:", ""); // Bersihin format IPv6
 
+        // Ambil data lokasi dari API eksternal
+        const response = await axios.get(`http://ip-api.com/json/${cleanIp}`);
+        const countryCode = response.data?.countryCode || "US"; // Default ke US kalau gagal
+
+        // Cek bahasa berdasarkan negara
+        const lang = countryToLang[countryCode] || "en";
+
+        res.json({ country: response.data?.country, lang });
+    } catch (error) {
+        console.error("Gagal mendapatkan lokasi:", error);
+        res.json({ country: "Unknown", lang: "en" }); // Default ke English
+    }
+});
+app.get("/lang/tr", (req, res) => {
+    res.sendFile(path.join(__dirname, "lang/tr.json"));
+});
 
 
 let server

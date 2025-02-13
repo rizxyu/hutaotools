@@ -30,7 +30,7 @@
    <script src="/js/dekstop.js"></script>
   </head>
   <body class="p-4 md:px-24 lg:px-32">
-    <div id="content" class="p-2 overflow-y-auto">
+    <div id="content" class="p-2">
       <!-- Home section -->
       <div id="home" class="overflow-y-auto">
         <form id="downloadForm" class="flex items-center justify-center gap-2 mb-6">
@@ -64,7 +64,6 @@
     w-fit max-w-full mx-auto">
       </div>
         
-        <!-- Link yang Mendukung -->
 <div id="supportContainer" class="fixed left-1/2 bottom-20 transform -translate-x-1/2 flex flex-col items-center gap-2">
   <!-- Tombol -->
   <button id="supportBtn" class="flex items-center gap-2 font-semibold text-sm transition-transform duration-300">
@@ -102,8 +101,37 @@
 </div>
       </div>
   <!-- Card Hasil Download -->
-  <div id="tools" class="hidden">
+<div id="tools" class="hidden">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+    <!-- Card: Modern Gradient Overlay with Animation -->
+    <div class="relative rounded-lg shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105">
+      <img src="https://assets.snapedit.app/images/enhance/hero_banner_static.png" alt="HD Photo"
+        class="w-full h-60 object-cover transition-all duration-300 group-hover:brightness-75 group-hover:blur-sm">
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent flex flex-col items-start justify-end p-4 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Enhance Photo</h3>
+        <p class="text-gray-200 text-sm">Tingkatkan kualitas gambar hingga HD dengan satu klik.</p>
+        <a href="/hd"
+          class="mt-3 px-4 py-2 dark-theme text-white text-sm font-semibold rounded-lg transition duration-300 opacity-0 group-hover:opacity-100">
+          Try Now
+        </a>
+      </div>
+    </div>
+        <!-- Card: Modern Gradient Overlay with Animation & Button -->
+
+    <div class="relative rounded-lg shadow-lg overflow-hidden group transform transition duration-300 hover:scale-105">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR715qf46MgTtscmRMog3G7NAxAKHAaOSI0yiVxG5PUEnaa4y5tRwYHERal&s=10" alt="Coming Soon" class="w-full h-60 object-cover transition duration-300 group-hover:blur-sm">
+      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-4">
+        <h3 class="text-white text-lg font-bold mb-2 opacity-100 transition-opacity duration-300 group-hover:opacity-80">
+        </h3>
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition duration-300 opacity-0 group-hover:opacity-100">
+          Coming Soon
+        </a>
+      </div>
+    </div>
   </div>
+</div>
       <!-- Donasi section -->
       <div id="donasi" class="hidden">
         <p>Jika Anda suka dengan proyek ini, pertimbangkan untuk berdonasi:</p>

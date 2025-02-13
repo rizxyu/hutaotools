@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beta.wzblueline.xyz">
+    <meta property="og:title" content="Hutao Tools">
+    <meta property="og:description" content="Best HD Photo For Free">
+    <meta property="og:image" content="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://beta.wzblueline.xyz">
+    <meta property="twitter:title" content="Hutao Tools">
+    <meta property="twitter:description" content="Best HD Photo website free">
+    <meta property="twitter:image" content="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png">
+    
+    <title>HD Photo with AI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="/js/script-hd.js"></script>
+
+    <style>
+        /* Before-After Image Slider */
+        .clip-path {
+            clip-path: inset(0 50% 0 0);
+            transition: clip-path 0.2s ease-in-out;
+        }
+        /* Spinner Loader */
+        .spinner {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+        }
+        
+        .spinner div {
+            position: absolute;
+            width: 50%;
+            height: 150%;
+            background: #ffcc0c;
+            transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+            animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+        }
+
+        .spinner div:nth-child(1) { --delay: 0.1; --rotation: 36; --translation: 150; }
+        .spinner div:nth-child(2) { --delay: 0.2; --rotation: 72; --translation: 150; }
+        .spinner div:nth-child(3) { --delay: 0.3; --rotation: 108; --translation: 150; }
+        .spinner div:nth-child(4) { --delay: 0.4; --rotation: 144; --translation: 150; }
+        .spinner div:nth-child(5) { --delay: 0.5; --rotation: 180; --translation: 150; }
+        .spinner div:nth-child(6) { --delay: 0.6; --rotation: 216; --translation: 150; }
+        .spinner div:nth-child(7) { --delay: 0.7; --rotation: 252; --translation: 150; }
+        .spinner div:nth-child(8) { --delay: 0.8; --rotation: 288; --translation: 150; }
+        .spinner div:nth-child(9) { --delay: 0.9; --rotation: 324; --translation: 150; }
+        .spinner div:nth-child(10) { --delay: 1; --rotation: 360; --translation: 150; }
+
+        @keyframes spinner-fzua35 {
+            0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+                transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+            }
+            50% {
+                transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <!-- Tombol Kembali -->
+    <div class="absolute top-4 left-4">
+        <a href="/" class="btn btn-ghost text-gray-700 hover:text-gray-900 text-xl">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
+    <!-- Tombol Translate -->
+    <div class="absolute top-4 right-4">
+        <select id="translateDropdown" class="select select-bordered bg-transparent text-gray-700">
+            <option value="id">🇮🇩 Indonesia</option>
+            <option value="js">🇮🇩 Jawa</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="cn">🇨🇳 中文</option>
+        </select>
+    </div>
+
+    <!-- Konten Tengah -->
+    <div class="text-center mt-16">
+        <h1 id="title" class="text-3xl md:text-4xl font-bold text-gray-800">HD Photo dengan AI</h1>
+        <p id="subtitle" class="text-gray-600 mt-2">Tingkatkan kualitas foto Anda secara gratis</p>
+
+        <!-- Form Upload -->
+        <label class="block mt-6">
+            <input type="file" class="hidden" id="upload">
+            <div id="uploadBox" class="cursor-pointer border-2 border-dashed border-gray-400 rounded-lg p-6 text-gray-600 flex flex-col items-center transition-all duration-300 ease-in-out transform hover:bg-yellow-400 hover:text-gray-900 hover:-translate-y-2 shadow-md hover:shadow-lg">
+                <i class="fas fa-upload text-3xl"></i>
+                <p class="mt-2 text-sm">Klik untuk mengunggah foto</p>
+            </div>
+        </label>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="hidden flex items-center justify-center mt-8">
+        <div class="spinner"> 
+        <div></div> <div></div> <div></div> <div></div> <div></div>
+            <div></div> <div></div> <div></div> <div></div> <div></div></div>
+    </div>
+
+    <!-- Card Hasil -->
+    <div id="resultCard" class="hidden card w-64 mt-8 border-2 border-dashed border-gray-400 bg-white shadow-lg rounded-lg overflow-hidden">
+        <figure>
+            <img id="resultImage" src="https://via.placeholder.com/300" alt="Hasil Foto" class="w-full object-cover">
+        </figure>
+        <div class="p-4 flex justify-between">
+            <button id="downloadBtn" class="btn btn-sm btn-neutral">
+                <i class="fas fa-download"></i>
+            </button>
+            <button id="shareBtn" class="btn btn-sm btn-primary">
+                <i class="fas fa-share"></i>
+            </button>
+            <button id="reloadBtn" class="btn btn-sm btn-warning">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

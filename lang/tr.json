@@ -1,0 +1,46 @@
+{
+  "id": {
+    "title": "Jernihkan Foto Mu dengan AI!",
+    "subtitle": "Mulai upload foto dengan mengetuk form di bawah!",
+    "upload_text": "Upload foto kamu di sini!",
+    "processing": "Menjernihkan...",
+    "processing_sub": "Sabar Ya 🥰 Lagi di Jernihin nih fotomu..",
+    "done": "Sudah selesai..",
+    "done_sub": "Gimana? Apakah sudah bagus☺️",
+    "error": "Gagal menjernihkan foto, coba lagi nanti.",
+    "token_error": "Gagal mendapatkan token. Coba refresh halaman!"
+  },
+  "js": {
+    "title": "Ngresiki foto nganggo AI!",
+    "subtitle": "Miwiti upload foto kanthi nutul formulir ing ngisor iki!",
+    "upload_text": "Upload foto sampeyan ing kene!",
+    "processing": "Jernihne...",
+    "processing_sub": "Kudu sabar 🥰 maneh ing foto iki kanthi jelas..",
+    "done": "Wis Rampung..",
+    "done_sub": "Piye? Wis Apik?☺️",
+    "error": "Gagal menjernihkan foto, coba lagi nanti.",
+    "token_error": "Gagal mendapatkan token. Coba refresh halaman!"
+  },
+  "en": {
+    "title": "Enhance Your Photo with AI!",
+    "subtitle": "Start by uploading a photo below!",
+    "upload_text": "Upload your photo here!",
+    "processing": "Enhancing...",
+    "processing_sub": "Hold on 🥰 Your photo is being enhanced..",
+    "done": "All done..",
+    "done_sub": "How is it? Does it look better? ☺️",
+    "error": "Failed to enhance the photo, please try again later.",
+    "token_error": "Failed to retrieve token. Try refreshing the page!"
+  },
+  "cn": {
+    "title": "使用AI增强您的照片！",
+    "subtitle": "通过下面的表单上传照片开始！",
+    "upload_text": "在这里上传您的照片！",
+    "processing": "正在增强...",
+    "processing_sub": "请稍等 🥰 正在增强您的照片..",
+    "done": "完成..",
+    "done_sub": "怎么样？ 看起来更好吗？ ☺️",
+    "error": "照片增强失败，请稍后再试。",
+    "token_error": "无法获取令牌。 请刷新页面重试！"
+  }
+}

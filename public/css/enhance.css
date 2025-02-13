@@ -1,0 +1,9 @@
+        .upload-box {
+            @apply transition-all duration-300 ease-in-out transform;
+        }
+        .upload-box:hover {
+            @apply bg-yellow-400 text-gray-900 translate-y-[-5px];
+        }
+        .upload-box:not(:hover) {
+            @apply translate-y-[5px];
+        }
