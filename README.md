@@ -1,17 +1,26 @@
 <img src="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png" alt="hutao"/>
 
-## Apa itu Hutao Tools?
+## Community
+[Whatsapp](https://chat.whatsapp.com/DixBjYthLB0BCjTFa9RPJX) [Telegram](https://t.me/rizxyu)
 
-## Secure
-Sudah ditambahin anti scraping:v
 
-## Support Tools
+## Tujuan/Objective
+tujuan dibuaynya repository adalah untuk mempelajari, mangasah dan mengimpruv Skill yg saya miliki maupun Anda sekalian:). terimakasih sudah berpartisipasi dalam pengembangan website ini..
+
+### Tidak Diafiliasi Pihak manapun:v
+
+## Dukungan/Support
+***
+
+
+## Tools
 * Enhance Photo
-## Support Media
+## Tautan Yg didukung
 * Tiktok Downloader
 * Instagram Downloader
 * Spotify Downloader
 * Soundcloud Downloader
+* Youtube mp3 & Youtube MP4
   
 ## Contributor
 <table>
@@ -23,7 +32,7 @@ Sudah ditambahin anti scraping:v
       <br>
       <a href="https://github.com/rizxyu">@Rizky</a>
       <br>
-      Kapal Lawud
+      XIGMA
     </td>
     <td width="20%" align="center" rowspan="2" colspan="2">
       <a href="https://github.com/mininxd">
