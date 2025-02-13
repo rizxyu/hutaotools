@@ -1,8 +1,8 @@
-<img src="https://i.ibb.co.com/Nrbwr82/images-29-removebg-preview.png" alt="hutao"/>
-
 ## Community
 [Whatsapp](https://chat.whatsapp.com/DixBjYthLB0BCjTFa9RPJX) [Telegram](https://t.me/rizxyu)
 
+## Visit Web
+[ 📍 ](https://beta.wzblueline.xyz)
 
 ## Tujuan/Objective
 tujuan dibuaynya repository adalah untuk mempelajari, mangasah dan mengimpruv Skill yg saya miliki maupun Anda sekalian:). terimakasih sudah berpartisipasi dalam pengembangan website ini..
