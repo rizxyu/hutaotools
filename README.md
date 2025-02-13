@@ -2,13 +2,17 @@
 
 ## Apa itu Hutao Tools?
 
+## Secure
+Sudah ditambahin anti scraping:v
 
+## Support Tools
+* Enhance Photo
 ## Support Media
 * Tiktok Downloader
 * Instagram Downloader
 * Spotify Downloader
 * Soundcloud Downloader
-
+  
 ## Contributor
 <table>
   <tr valign="middle">
