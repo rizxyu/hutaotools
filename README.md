@@ -1,5 +1,5 @@
 ## Community
-[Whatsapp](https://chat.whatsapp.com/DixBjYthLB0BCjTFa9RPJX) [Telegram](https://t.me/rizxyu)
+[Whatsapp](https://chat.whatsapp.com/KaMbvtH844aCY4uDdqwBf2) [Telegram](https://t.me/rizxyu)
 
 ## Visit Web
 [ 📍 ](https://beta.wzblueline.xyz)
